@@ -1,0 +1,12 @@
+name 'centreon-engine'
+maintainer 'Criteo'
+maintainer_email 'c.judith@criteo.com'
+license 'all_rights'
+description 'Installs/Configures centreon-engine'
+long_description 'Installs/Configures centreon-engine'
+version 	 '0.1.0'
+depends          'sudo'
+depends          'yum'
+
+supports	 'redhat'
+supports	 'centos'

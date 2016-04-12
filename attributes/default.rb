@@ -5,11 +5,11 @@
 # Copyright (c) 2016 Criteo, All Rights Reserved.
 
 # --[ Centreon engine home dir ]--
-default['centreon_engine']['user']['home_directory'] = "/var/lib/centreon-engine"
+default['centreon_engine']['user']['home_directory'] = '/var/lib/centreon-engine'
 
 # --[ Centreon engine user parameters ]--
-default['centreon_engine']['user'] = "centreon-engine"
-default['centreon_engine']['group'] = "centreon-engine"
+default['centreon_engine']['user'] = 'centreon-engine'
+default['centreon_engine']['group'] = 'centreon-engine'
 
 # --[ Packages ]--
 default['centreon_engine']['server']['packages'] = %w{centreon-engine nagios-plugins nrpe-plugin}

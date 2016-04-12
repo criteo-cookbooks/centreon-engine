@@ -4,7 +4,7 @@
 # Copyright (c) 2016 Criteo, All Rights Reserved.
 include_recipe 'centreon-engine::repo'
 node['centreon_engine']['server']['packages'].each do |pkg|
-  package pkg  do
+  package pkg do
     action :install
   end
 end

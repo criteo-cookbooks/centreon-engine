@@ -7,17 +7,16 @@
 require 'spec_helper'
 
 describe 'centreon-engine::default' do
-  context 'When all attributes are default, on centos 6.7' do
-    let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(
-        platform: 'centos',
-        version: '6.7'
-      )
-      runner.converge(described_recipe)
-    end
+  platforms = {
+    'centos' =>  ['6.7', '7.2.1511']
+  }
 
-    it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
+  platforms.each do |platform, versions|
+    versions.each do |version|
+    let(:chef_run) { ChefSpec::SoloRunner.new(platform: platform, version: version).converge(described_recipe)    }
+      it 'converges successfully' do
+        expect { chef_run    }.to_not raise_error
+      end
     end
   end
 end

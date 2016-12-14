@@ -17,10 +17,10 @@ driver:
   iam_profile_name: test-kitchen
   region: <%= ENV['AWS_REGION'] || 'us-west-2' %>
   subnet_filter:
-    tag:   'Name'
+    tag: 'Name'
     value: <%= ENV['AWS_SUBNET'] || 'chef-testing-opensource-vpc-subnet' %>
   security_group_filter:
-    tag:   'Name'
+    tag: 'Name'
     value: <%= ENV['AWS_SECURITY_GROUP'] || 'chef-testing-opensource-vpc-security-group' %>
   block_device_mappings:
     - device_name: /dev/sda1
@@ -32,7 +32,7 @@ transport:
   ssh_key: <%= ENV['HOME'] %>/.ssh/id_rsa
 
 provisioner:
-  name: chef_zero_scheduled_task
+  name: chef_zero
 
 platforms:
   - name: centos-6
@@ -42,4 +42,4 @@ platforms:
 suites:
   - name: default
     run_list:
-    - recipe[centreon-engine::default]
+      - recipe[centreon-engine::default]

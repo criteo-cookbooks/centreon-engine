@@ -1,16 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'berkshelf'
-gem 'kitchen-vagrant'
+gem 'chef'
 gem 'chefspec'
-gem 'rake'
+gem 'fauxhai'
 gem 'foodcritic'
-gem 'chef-zero-scheduled-task'
+gem 'kitchen-vagrant'
+gem 'rake'
+gem 'test-kitchen'
 
 group :ec2 do
-  gem 'test-kitchen'
-  gem 'kitchen-ec2', :git => 'https://github.com/criteo-forks/kitchen-ec2.git', :branch => 'criteo'
-  gem 'winrm',      '~> 1.6'
-  gem 'winrm-fs',   '~> 0.3'
+  gem 'kitchen-ec2', git: 'https://github.com/criteo-forks/kitchen-ec2.git', branch: 'criteo'
 end
-
